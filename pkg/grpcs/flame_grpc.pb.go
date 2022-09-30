@@ -382,7 +382,7 @@ var Frontend_ServiceDesc = grpc.ServiceDesc{
 			ClientStreams: true,
 		},
 	},
-	Metadata: "openbsi.com/lava/protos/lava.proto",
+	Metadata: "xflops.cn/flame/protos/flame.proto",
 }
 
 // BackendClient is the client API for Backend service.
@@ -676,5 +676,5 @@ var Backend_ServiceDesc = grpc.ServiceDesc{
 			ServerStreams: true,
 		},
 	},
-	Metadata: "openbsi.com/lava/protos/lava.proto",
+	Metadata: "xflops.cn/flame/protos/flame.proto",
 }
