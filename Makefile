@@ -25,8 +25,8 @@ init:
 	mkdir -p ${RELEASE_DIR}
 
 grpc-pkg: init
-	go get google.golang.org/protobuf/cmd/protoc-gen-go@v1.26
-	go get google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.1
+	go get -u google.golang.org/protobuf/cmd/protoc-gen-go@v1.28.1
+	go get -u google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.1.0
 
 grpc-gen: grpc-pkg
 	protoc --plugin=protoc-gen-go=${GOPATH}/bin/protoc-gen-go \
@@ -36,13 +36,13 @@ grpc-gen: grpc-pkg
 		xflops.cn/flame/protos/flame.proto
 
 flame-api-gateway: init grpc-gen
-	go build -ldflags ${LD_FLAGS} -o=${BIN_DIR}/flame-api-gateway ./cmd/api-gateway
+	go build -o=${BIN_DIR}/flame-api-gateway ./cmd/api-gateway
 
 flame-application-manager: init
-	go build -ldflags ${LD_FLAGS} -o=${BIN_DIR}/flame-application-manager ./cmd/application-manager
+	go build -o=${BIN_DIR}/flame-application-manager ./cmd/application-manager
 
 flame-session-manager: init grpc-gen
-	go build  -o=${BIN_DIR}/flame-session-manager ./cmd/session-manager
+	go build -o=${BIN_DIR}/flame-session-manager ./cmd/session-manager
 
 flame-webhook-manager: init
-	go build -ldflags ${LD_FLAGS} -o=${BIN_DIR}/flame-webhook-manager ./cmd/webhook-manager
+	go build -o=${BIN_DIR}/flame-webhook-manager ./cmd/webhook-manager

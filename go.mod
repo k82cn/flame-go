@@ -3,11 +3,11 @@ module xflops.cn/flame
 go 1.18
 
 require (
-	github.com/google/uuid v1.1.1
+	github.com/google/uuid v1.1.2
 	github.com/spf13/pflag v1.0.5
 	go.uber.org/automaxprocs v1.4.0
 	google.golang.org/grpc v1.38.0
-	google.golang.org/protobuf v1.26.0
+	google.golang.org/protobuf v1.28.1
 	k8s.io/apimachinery v0.19.15
 	k8s.io/component-base v0.19.15
 	k8s.io/klog v1.0.0
@@ -59,6 +59,7 @@ require (
 	golang.org/x/time v0.0.0-20191024005414-555d28b269f0 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/genproto v0.0.0-20210602131652-f16073e35f0c // indirect
+	google.golang.org/grpc/cmd/protoc-gen-go-grpc v1.1.0 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	k8s.io/api v0.19.15 // indirect
@@ -76,7 +77,7 @@ require (
 )
 
 replace (
-	google.golang.org/grpc => google.golang.org/grpc v1.29.1
+	google.golang.org/grpc => google.golang.org/grpc v1.28.1
 	k8s.io/api => k8s.io/api v0.19.15
 	k8s.io/apiextensions-apiserver => k8s.io/apiextensions-apiserver v0.19.15
 	k8s.io/apimachinery => k8s.io/apimachinery v0.19.15
