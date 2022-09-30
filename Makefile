@@ -15,11 +15,8 @@
 BIN_DIR=_output/bin
 RELEASE_DIR=_output/release
 
-
-all: flame-scheduler \
-	flame-controller-manager \
+all: flame-application-manager \
 	flame-session-manager \
-	flame-installer \
 	flame-webhook-manager \
 	flame-api-gateway
 
@@ -41,17 +38,11 @@ grpc-gen: grpc-pkg
 flame-api-gateway: init grpc-gen
 	go build -ldflags ${LD_FLAGS} -o=${BIN_DIR}/flame-api-gateway ./cmd/api-gateway
 
-flame-scheduler: init
-	go build -ldflags ${LD_FLAGS} -o=${BIN_DIR}/flame-scheduler ./cmd/scheduler
-
-flame-controller-manager: init
-	go build -ldflags ${LD_FLAGS} -o=${BIN_DIR}/flame-controller-manager ./cmd/controller-manager
+flame-application-manager: init
+	go build -ldflags ${LD_FLAGS} -o=${BIN_DIR}/flame-application-manager ./cmd/application-manager
 
 flame-session-manager: init grpc-gen
-	go build -ldflags ${LD_FLAGS} -o=${BIN_DIR}/flame-session-manager ./cmd/session-manager
-
-flame-installer: init
-	go build -ldflags ${LD_FLAGS} -o=${BIN_DIR}/flame-installer ./cmd/installer
+	go build  -o=${BIN_DIR}/flame-session-manager ./cmd/session-manager
 
 flame-webhook-manager: init
 	go build -ldflags ${LD_FLAGS} -o=${BIN_DIR}/flame-webhook-manager ./cmd/webhook-manager

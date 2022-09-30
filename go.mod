@@ -16,7 +16,6 @@ require (
 )
 
 require (
-	cloud.google.com/go v0.81.0 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/blang/semver v3.5.0+incompatible // indirect
 	github.com/cespare/xxhash/v2 v2.1.1 // indirect
@@ -73,7 +72,6 @@ require (
 	k8s.io/utils v0.0.0-20200729134348-d5654de09c73 // indirect
 	sigs.k8s.io/structured-merge-diff/v4 v4.1.2 // indirect
 	sigs.k8s.io/yaml v1.2.0 // indirect
-	stathat.com/c/consistent v1.0.0 // indirect
 	volcano.sh/apis v1.5.0-beta.0 // indirect
 )
 
